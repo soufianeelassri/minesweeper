@@ -21,5 +21,7 @@ void minesCount(int ligne, int column, cell grid[SIZE][SIZE]);    // Compte les 
 void addFlag(char flag, int ligne, int column, cell grid[SIZE][SIZE]);   // Ajoute un drapeau à une cellule
 void deleteFlag(int ligne, int column, cell grid[SIZE][SIZE]);  // Supprime un drapeau d'une cellule
 bool checkFlag(cell grid[SIZE][SIZE]);   // Vérifie si des drapeaux sont présents sur la grille
+int numberOfActivated(cell grid[SIZE][SIZE]); // Compter le nombre de cellules activées dans la grille
+bool checkWin(cell grid[SIZE][SIZE]);  // Vérifie si le joueur a gagné le jeu
 
 #endif

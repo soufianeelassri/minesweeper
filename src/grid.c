@@ -211,3 +211,31 @@ void deleteFlag(int ligne, int colonne, cell grid[SIZE][SIZE]){
         printf("Cellule invalide\n");
     }
 }
+
+// Fonction pour compter le nombre de cellules activées dans la grille
+// Paramètre :
+//   - grid : la grille de jeu représentée par un tableau à deux dimensions de cellules
+// Renvoie :
+//   - le nombre de cellules activées dans la grille
+int numberOfActivated(cell grid[SIZE][SIZE]){
+    int cpt = 0;
+    // Parcours de toutes les cellules de la grille
+    for(int i = 0 ; i < SIZE ; i++){
+        for(int j = 0 ; j < SIZE ; j++){
+            // Vérification si la cellule est activée
+            if(grid[i][j].is_activate == true){
+                cpt++;
+            }
+        }
+    }
+    return cpt;
+}
+
+bool checkWin(cell grid[SIZE][SIZE]) {
+    // Vérification si le nombre de cellules activées est égal au nombre total de cellules moins le nombre de mines
+    if(numberOfActivated(grid) == (SIZE * SIZE) - MINES){
+        printf("WIN WIN");
+        return true;
+    }
+    return false;
+}

@@ -53,7 +53,7 @@ int main() {
         Update(ligne, column, grid);  // Mise à jour de l'état de la cellule sélectionnée
         addFlag(flag, ligne, column, grid);  // Ajout d'un drapeau à la cellule si demandé
         minesCount(ligne, column, grid);  // Comptage des mines voisines autour de la cellule sélectionnée
-    } while(!gameOver(ligne, column, grid));  // Boucle tant que le jeu n'est pas terminé
+    } while(!gameOver(ligne, column, grid) && !checkWin(grid));  // Boucle tant que le jeu n'est pas terminé ou le joueur a gagné le jeu
 
     Display(grid);  // Affichage final de la grille
 
